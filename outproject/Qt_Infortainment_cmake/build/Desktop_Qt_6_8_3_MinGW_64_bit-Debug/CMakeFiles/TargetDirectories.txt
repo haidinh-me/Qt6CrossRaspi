@@ -1,0 +1,10 @@
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/Qt_Infortainment_cmake.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/Qt_Infortainment_cmake_qmlimportscan.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/install.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/Qt_Infortainment_cmake_autogen_timestamp_deps.dir
+F:/Document/Qt Practical/Qt_Infortainment_cmake/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/Qt_Infortainment_cmake_autogen.dir

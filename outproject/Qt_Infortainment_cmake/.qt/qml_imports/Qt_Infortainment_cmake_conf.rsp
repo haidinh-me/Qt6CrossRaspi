@@ -1,0 +1,9 @@
+-rootPath
+/home/ubuntu/QTonRaspberryPi/Qt_Infortainment_cmake
+-cmake-output
+-output-file
+/home/ubuntu/QTonRaspberryPi/Qt_Infortainment_cmake/.qt/qml_imports/Qt_Infortainment_cmake_conf.cmake
+-importPath
+/home/ubuntu/QTonRaspberryPi/Qt_Infortainment_cmake
+-importPath
+/build/qt6/pi/qml

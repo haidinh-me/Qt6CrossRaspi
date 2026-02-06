@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_Qt_Infortainment_cmake_FILE /home/ubuntu/QTonRaspberryPi/Qt_Infortainment_cmake/Qt_Infortainment_cmake)
+set(__QT_DEPLOY_TARGET_Qt_Infortainment_cmake_TYPE EXECUTABLE)
