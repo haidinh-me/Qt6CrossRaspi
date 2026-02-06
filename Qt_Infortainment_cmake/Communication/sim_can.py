@@ -1,0 +1,40 @@
+import socket
+import struct
+import time
+
+# Cấu hình kết nối
+UDP_IP = "127.0.0.1"
+UDP_PORT = 35550
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+def send_can_frame(can_id, payload_hex):
+    # Đóng gói ID (4 bytes unsigned int)
+    # '>I' nghĩa là Big Endian, Unsigned Int. Phải khớp với QDataStream trong QT
+    packet = struct.pack(f'>I{len(payload_hex)}B', can_id, *payload_hex) 
+    
+    sock.sendto(packet, (UDP_IP, UDP_PORT))
+    print(f"Sent ID: {hex(can_id)} | Data: {payload_hex}")
+
+
+indicator = [0x90, 0x0, 0x8, 0x0, 0x3]
+#indicator = [0x91, 0x20, 0x8, 0x2, 0x3]
+
+#sysinfor = [0x9C, 0x29, 0xE1, 0xAF, 0x85, 0x19, 0x28, 0x2]
+sysinfor = [0x48, 0x68, 0x90, 0x35, 0x57, 0xA, 0x2F, 0xF2]
+
+gearN = [0x4, 0x0, 0x0, 0x0, 0x3, 0xC0]
+gearP = [0x0, 0x0, 0x0, 0x8, 0x3, 0xC0]
+gearR = [0x4, 0x0, 0x20, 0x0, 0x3, 0xC0]
+gearD = [0x0, 0x8, 0x0, 0x0, 0x3, 0xC0]
+
+
+while True:
+    send_can_frame(0x444, indicator)
+    time.sleep(0.5)
+
+    send_can_frame(0x455, sysinfor)
+    time.sleep(0.5)
+
+    send_can_frame(0x454, gearP)
+    time.sleep(0.5)
