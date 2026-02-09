@@ -116,7 +116,7 @@ docker create --name temp-arm raspimage
 docker cp temp-arm:/build/rasp.tar.gz ./rasp.tar.gz
 
 ```
-```rasp.tar.gz``` contains all necessary Qt6 libraries and the Debian sysroot, replacing the need for manual rsync from the device.
+```rasp.tar.gz``` contains all necessary the Debian sysroot, replacing the need for manual rsync from the device.
 
 ### Step 2: Build the Final Toolchain Image
 
