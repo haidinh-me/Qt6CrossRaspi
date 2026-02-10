@@ -12,8 +12,7 @@ on:
 jobs:  
   build-raspi:
     runs-on: ubuntu-latest
-    container:
-      image: haidinhlv/qtcrossbuild:latest
+
     steps:
       - name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@main
@@ -28,6 +27,9 @@ jobs:
           
       - name: Checkout Source Code
         uses: actions/checkout@v4
+        
+      - name: Pull Docker Image
+        run: docker pull haidinhlv/qtcrossbuild:latest
         
       - name: Compile Application
         run: |
