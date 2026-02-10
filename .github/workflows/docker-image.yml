@@ -37,13 +37,13 @@ jobs:
           
           docker run --rm -v ${{ github.workspace }}:/build/project -w /build/project haidinhlv/qtcrossbuild:latest /bin/bash -c "
           
-          mkdir -p build_dir
+          mkdir -p build_dir output
           
           cd build_dir
-          /build/qt6/pi/bin/qt-cmake ../@PROJECT_DIR -DCMAKE_BUILD_TYPE=Debug
+          /build/qt6/pi/bin/qt-cmake ../$PROJECT_DIR -DCMAKE_BUILD_TYPE=Debug
           cmake --build . 
 
-          cp /@PROJECT_DIR ../ "
+          cp /$PROJECT_DIR ../output/ "
                     
           echo "Build success!"
 
@@ -51,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Raspi-Qt-App
-          path: /build/@PROJECT_DIR
+          path: /build/project/output/$PROJECT_DIR
