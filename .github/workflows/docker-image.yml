@@ -51,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Raspi-Qt-App
-          path: /build/project/output
+          path: /build/project/output/
