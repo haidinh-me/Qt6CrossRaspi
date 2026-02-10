@@ -1,7 +1,6 @@
 name: Docker Image CI
 
 env:
-  DOCKER_IMAGE: haidinhlv/qtcrossbuild:latest
   PROJECT_DIR: Qt_Infortainment_cmake
 
 on:
@@ -14,7 +13,7 @@ jobs:
   build-raspi:
     runs-on: ubuntu-latest
     container:
-      image: ${{ env.DOCKER_IMAGE }}
+      image: haidinhlv/qtcrossbuild:latest
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
