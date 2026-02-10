@@ -35,13 +35,15 @@ jobs:
         run: |
           echo "Starting build process..."
           
-          rm -rf /build/@PROJECT_DIR
-          mkdir -p /build/@PROJECT_DIR
-          cp $PROJECT_DIR /build/@PROJECT_DIR
-  
-          cd /build/@PROJECT_DIR
-          /build/qt6/pi/bin/qt-cmake . -DCMAKE_BUILD_TYPE=Debug
-          cmake --build .
+          docker run --rm -v ${{ github.workspace }}:/build/project -w /build/project haidinhlv/qtcrossbuild:latest /bin/bash -c "
+          
+          mkdir -p build_dir
+          
+          cd build_dir
+          /build/qt6/pi/bin/qt-cmake ../@PROJECT_DIR -DCMAKE_BUILD_TYPE=Debug
+          cmake --build . 
+
+          cp /@PROJECT_DIR ../ "
                     
           echo "Build success!"
 
