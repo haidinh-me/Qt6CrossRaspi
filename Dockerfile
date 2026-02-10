@@ -1,5 +1,10 @@
-# Use Debian 12 (Bookworm) as the base image
-FROM debian:bookworm
+ARG TARGET_PLATFORM=linux/arm64
+
+FROM --platform=$TARGET_PLATFORM haidinhlv/raspimage:latest AS sysroot_source
+
+FROM debian:12-slim
+
+COPY --from=sysroot_source /build/sysroot /build/sysroot
 
 # Avoid interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
