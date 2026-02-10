@@ -1,0 +1,40 @@
+name: Docker Image CI
+
+env:
+  DOCKER_IMAGE: haidinhlv/qtcrossbuild:latest
+  PROJECT_DIR: Qt_Infortainment_cmake
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-raspi:
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ env.DOCKER_IMAGE }}
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        
+      - name: Compile Application
+        run: |
+          echo "Starting build process..."
+          
+          rm -rf /build/@PROJECT_DIR
+          mkdir -p /build/@PROJECT_DIR
+          cp $PROJECT_DIR /build/@PROJECT_DIR
+  
+          cd /build/@PROJECT_DIR
+          /build/qt6/pi/bin/qt-cmake . -DCMAKE_BUILD_TYPE=Debug
+          cmake --build .
+                    
+          echo "Build success!"
+
+      - name: Upload Binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: Raspi-Qt-App
+          path: /build/@PROJECT_DIR
