@@ -203,6 +203,16 @@ bash helperTasks.sh run
 
 *Note: Edit ```helperTasks.sh``` to update your Raspberry Pi's IP address and paths before running.*
 
+## 💡The Build Journey: CI/CD Optimization
+
+One of the most exciting challenges was automating the build for the Qt 6.9.1 HMI.
+
+Building Qt for ARM64 is a resource-intensive task that often exceeds the limits of standard CI environments. To solve this, I implemented a Docker-first strategy:
+
+-  Pre-built Environments: I maintain a dedicated cross-compilation image on Docker Hub ```haidinhlv/qtcrossbuild```.
+
+-  Build Acceleration: By pulling a pre-compiled environment, the GitHub Actions pipeline avoids the massive 50GB+ compilation process, focusing only on the application logic. This transformed a multi-hour build into a matter of minutes.
+
 ## 💻 Qt Creator Integration
 
 Qt Creator offers a professional and convenient environment for visualizing and editing Qt projects. Consequently, performing tasks such as editing, building, and deploying directly within Qt Creator is highly efficient.
@@ -253,6 +263,17 @@ Running the project from Qt Creator will deploy the application and display the 
 ![Build Settings](images/HMI-dashboard.png)
 
 This interface serves as the primary HMI for the [Qt-Infotainment](https://github.com/haidinh-me/Qt-Infotainment) project, handling the visualization and processing of CAN bus packets from the vehicle.
+
+Explore more about [CAN-Node](https://github.com/haidinh-me/CAN-Node), featuring full node simulation for HMI systems.  
+
+## 🗺️ Future Roadmap
+
+The journey doesn't end with a working dashboard. To push this simulation closer to professional automotive standards, I plan to evolve the project in the following directions:
+-  AUTOSAR Integration: Moving toward a layered software architecture by implementing AUTOSAR-compliant communication modules and standardized diagnostic stacks.
+-  Protocol Expansion (LIN & OBDII): Expanding the gateway's capabilities to support LIN bus topologies and OBDII for a more comprehensive vehicle diagnostic simulation.
+-  High-Fidelity HMI: Enhancing the digital cockpit with 3D renderings and advanced QML shaders to provide a more immersive and realistic user experience.
+-  Cloud & OTA Updates: Integrating wireless connectivity to enable Over-the-Air (OTA) firmware updates for the ESP32 nodes and remote vehicle telemetry monitoring via a cloud backend.
+-  Functional Safety (ISO 26262): Exploring the implementation of basic functional safety mechanisms within the CAN communication logic to ensure data integrity and system reliability.
 
 ## 🤝 Acknowledgments
 This workflow references the "[Cross compilation of Qt6.10.1 and OpenCV For Raspberry pi 3/4/5](https://github.com/PhysicsX/QTonRaspberryPi)" guide. Huge thanks to @PhysicsX for the foundation and inspiration.
