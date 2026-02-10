@@ -9,12 +9,23 @@ on:
   pull_request:
     branches: [ "master" ]
 
-jobs:
+jobs:  
   build-raspi:
     runs-on: ubuntu-latest
     container:
       image: haidinhlv/qtcrossbuild:latest
     steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+          
       - name: Checkout Source Code
         uses: actions/checkout@v4
         
