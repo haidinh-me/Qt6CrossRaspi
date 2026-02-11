@@ -236,11 +236,11 @@ sudo apt-get install qtcreator
 
 - Add a Custom Process Step:
 
-  - Command: bash
+  - Command: ```bash```
 
-  - Arguments: helperTasks.sh build
+  - Arguments: ```helperTasks.sh build```
 
-  - Working Directory: /home/ubuntu/QTonRaspberryPi/
+  - Working Directory: ```/home/ubuntu/QTonRaspberryPi/```
 
 ![Build Settings](images/build-setting.png)
 
@@ -248,9 +248,9 @@ sudo apt-get install qtcreator
 
 Add a Custom Executable configuration.
 
-  - Executable: bash
+  - Executable: ```bash```
 
-  - Arguments: helperTasks.sh run
+  - Arguments: ```helperTasks.sh run```
 
   - Working Directory: Project source directory.
 
